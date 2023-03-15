@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Time Analysis</title>
+    <link rel="stylesheet" href="{% static 'css/py.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    
+
+</head>
+<body>
+    <div class="main-container display-flex">
+        <div class="row">
+            <h1>SCREEN TIME ANALYSIS</h1>
+        </div>
+        <div class="container display-flex">
+            <div class="row watch popup">
+                <div class="time">
+                    00:00:00
+                </div>
+            </div>
+            <div class="row init-btn">
+                <button data-text="Awesome" id="popbtn"  class="button " onclick="popupTimeControls(), start()" >
+                    START
+                </button>
+            </div>
+            <div class="row controls popup">
+                <button id="start" onclick="start()">Start</button>
+                <button id="stop" onclick="stop()">Stop</button>
+                <button id="reset" onclick="reset()">Reset</button>
+            </div>
+        </div>
+    </div>
+    
+     <!-- <div class="div1">
+       
+    </div> 
+    
+    <div class="watch " id="popup">
+        
+        <div class="controls">
+            
+        </div>
+
+    </div> -->
+    
+      <script>
+        function popupTimeControls(){
+            let elem = document.querySelectorAll(".popup")
+            let popbtn = document.querySelector("#popbtn")
+            console.dir(elem)
+            
+            elem[0].classList.toggle('popup-active')
+            elem[1].classList.toggle('popup-active')
+            
+            popbtn.style.display = 'none'
+        }
+        // let popup = document.getElementById("popup");
+        // let pop = document.getElementById("pop");
+        // function openPopup(){
+        //     popup.classList.add("open-popup");
+        // }
+        // function closePopup(){
+        //     pop.classList.add("close-popup");
+        // }
+        
+    </script>  
+    <script type ="text/javascript" src="{% static 'js/main.js' %}"></script>
+    
+    
+</body>
+</html>
